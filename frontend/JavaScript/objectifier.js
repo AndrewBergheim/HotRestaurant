@@ -1,4 +1,6 @@
-$("#submit-button").on("click",function(){
+
+$("#submit-button").on("click",function(event){
+    event.preventDefault()
     if ($("#name").val() == "" || $("#phone-number").val() == "" || $("#email").val() == "" || $("#Id").val() == ""){
         alert("Please enter a value for each field")
         return
@@ -7,13 +9,6 @@ $("#submit-button").on("click",function(){
     let phoneNumber = $("#phone-number").val()
     let email = $("#email").val()
     let Id = $("#id").val()
-/*
-    let toPush;
-    toPush.name = name;
-    toPush.phoneNumber = phoneNumber;
-    toPush.email = email;
-    toPush.Id = Id
-*/
     $.ajax({
         url:"http://localhost:1729/api/tables",
         data:{
@@ -23,6 +18,5 @@ $("#submit-button").on("click",function(){
             Id: Id
         },
         type:"POST"
-
-    })
+    }).then(console.log("Done!"))
 })

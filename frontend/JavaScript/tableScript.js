@@ -3,9 +3,10 @@ $.ajax({
     type:"GET"
 
 }).then(function(response){
+    console.log(response)
     for (let i = 0; i < response.length;i++){
         if (i < 5){ 
-            $("#reserved-tables").append(
+            $(".list-group").append(
             `
             <li>
             <h2>Table #${i+1}</h2>
