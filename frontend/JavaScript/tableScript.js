@@ -1,5 +1,5 @@
 $.ajax({
-    url:"http://localhost:1729/GetReservations",
+    url:"http://localhost:1729/api/tables",
     type:"GET"
 
 }).then(function(response){
