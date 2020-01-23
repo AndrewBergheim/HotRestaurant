@@ -13,6 +13,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "./frontend/index.html"));
 });
 
+app.get("/index.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "./frontend/index.html"));
+});
+
 app.get("/tables.html", (req, res) => {
     res.sendFile(path.join(__dirname, "./frontend/tables.html"));
 });
@@ -25,7 +29,7 @@ app.get("/api/tables", (req, res) => {
     res.json(tables);
 });
 
-app.get("/api/tables", (req, res) => {
+app.post("/api/tables", (req, res) => {
     let newTable = req.body;
     tables.push(newTable);
     res.json(newTable);
